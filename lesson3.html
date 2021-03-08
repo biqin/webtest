@@ -1,0 +1,77 @@
+<!-- CSS选择器 -->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>lesson3</title>
+
+	<!-- 2.页面样式 -->
+	<style type="text/css">
+		div {
+			width: 100px;
+			height: 100px;
+			background-color:green;
+		}
+	</style>
+
+    <!-- 3.外部css文件,作用域也是页面，谁在后面谁生效 -->
+	<link rel="stylesheet" type="text/css" href="lesson3.css">
+
+<!-- !important > 行间样式 > id > class |属性 >标签选择器 > 通配符 -->
+
+
+</head>
+</head>
+<body>
+
+<!-- 1.行间样式 -->
+<div style="width: 100px;height: 100px;background-color: red">
+</div>
+
+<div>
+	<p>afdaf</p>
+</div>
+<br>
+<div></div>
+
+<p id="only"> id</p>
+<p class="type">type</p>
+
+<p id="bq" class="type"> idbq </p>
+
+
+<div> <span>123</span></div>
+<div> <p><span>qqqqqq</span></p> </div>
+<span>222</span>
+
+
+<p class="parent"><span>123</span></p>
+
+<em>dafaf</em>
+<strong>adfa</strong>
+
+
+<p style="
+width: 100px; height: 100px;
+font-size: 50px;
+font-weight: bold;
+font-style: italic;
+font-family: 宋体;
+color: #f40;
+/*color:#ff4400;  */
+/*color:rgb(255, 255, 0);*/
+/*英文单词，颜色代码，颜色函数*/
+border:100px solid black;
+/*border-width border-style border-color*/
+border-left-color: transparent;
+">
+test
+</p>
+
+
+<strong> qqqqq </strong>
+
+
+</body>
+</html>

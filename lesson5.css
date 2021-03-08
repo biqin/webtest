@@ -1,0 +1,89 @@
+div {
+height: 200px;
+border:100px solid pink;
+text-align: left;
+font-size: 16px;
+font-style: italic;
+/*都是指高度，只是汉字字体宽高一般一致*/
+line-height: 1.2em;
+text-indent: 2em; 
+/*1em = 1*font-size*/
+text-decoration: underline;
+cursor: pointer;
+}
+
+/*伪类选择器，任何方式的选择器加上冒号。。用来添加选择器特殊效果*/
+div:hover {
+	color: orange;
+	border-radius: 20px;
+}
+
+span {
+	/*将默认的行级改成块级*/
+/*	display: block;*/
+}
+
+img {
+	width: 200px;	
+	margin-left: -6px;
+}
+
+/*1.行级元素，inline
+1）内容决定元素大小
+2）不可以通过css改变宽高
+3）例子:span，strong，em，a，del
+
+2.块级元素，block
+1）独占一行
+2）可以通过css改变宽高
+3）例子：div，p，ul，ol，form，address，
+
+3.行级块元素，inline-block    
+1）内容决定元素大小
+2）可以通过css改变宽高
+3）例子：img*/
+
+
+/*盒子模型：margin，border，padding，content（width，height）*/
+ul {
+	background-color: red;
+	margin: 100px 80px 60px 40px;
+	/*上，右，下，左*/
+	border: 10px solid black;
+	border-width: 10px 20px;
+	/*上下，左右*/
+	padding: 100px 80px 60px;
+	/*上，右左，下*/
+	width: 200px;
+	height: 200px;
+}
+
+.d1 {
+	/*
+	1.绝对定位，absolute
+	1）脱离原来的层级，每个absolute都是一个新的层级，并在原来层级让出位置
+	2）相对于最近的有定位的父级定位，没有的话则相对文档定位
+	2.相对定位，relative
+	1）脱离原来的层级，每个relative都是一个新的层级，在原来层级仍然占住位置
+	2）相对于自己原来的位置定位
+	3.固定定位，fix
+	1）脱离原来的层级，每个absolute都是一个新的层级，并在原来层级让出位置
+	2）相对于最近的有定位的父级定位，没有的话则相对文档定位
+
+	一般用相对定位做标杆（因为特性1，它不影响其他元素的位置），用绝对定位来定位（因为特性2，直接根据父级标杆定位就好）
+	*/
+	position: fixed;
+	left:50px;
+	top: 50px;
+	width: 100px;
+	height: 100px;
+	background-color: red;
+	opacity: 0.6;
+	font-size: 25px;
+}
+
+.d2 {
+	width: 200px;
+	height: 200px;
+	background-color: green;
+}

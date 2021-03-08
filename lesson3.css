@@ -1,0 +1,86 @@
+/*
+!important  infinity
+ 行间样式 1000
+ id 100
+ class |属性 |伪类 10 
+ 标签选择器  |伪元素 1
+ 通配符   0
+ */
+
+
+/*id选择器*/
+#bq {
+    width: 100px;
+	height: 100px;
+	background-color:green;	
+}
+
+/*类别选择器*/
+.type {
+    width: 100px;
+	height: 100px;
+	background-color:red !important; 
+}
+
+/*属性选择器*/
+[id="only"] {
+	width: 100px;
+	height: 100px;
+	background-color:yellow;	
+
+}
+
+
+/*标签选择器，可以自定义系统标签的样式*/
+div {
+	width: 100px;
+	height: 100px;
+	background-color:yellow;
+}
+
+p {
+	background-color:orange;
+}
+
+span {
+	background-color:yellow;
+}
+
+/*通配符选择器*/
+* {
+	background-color:pink;	
+}
+
+
+
+/*涉及到一个元素被多个匹配，权重和大的那个优先*，权重和一样则后面的优先/
+
+/*父子选择器|派生选择器，
+1.路径上都可以，不一定是标签
+2.路径不一定要是直接的
+*/
+div span {
+	background-color:yellow;
+}
+
+.parent span {
+	background-color:green;
+}
+
+/*直接子元素选择器*/
+div > span {
+	background-color:purple;
+}
+
+
+/*并列选择器，同时多种条件不加空格描述*/
+p.parent {
+	background-color:purple;
+}
+
+/*分组选择器，公用代码块*/
+em, strong {
+	background-color: red;
+}
+
+
