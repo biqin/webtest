@@ -1,0 +1,109 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+/*两栏布局==========================*/
+.right {
+	position: absolute;
+	right: 0;
+	width:200px;
+	height: 200px;
+	background-color: #fcc;
+	opacity: 0.5;
+}
+
+.left {
+	margin-right: 200px;
+	height: 200px;
+	background-color: #123;
+}
+
+/*bfc解决margin塌陷============================*/
+.wrapper {
+	margin-left:100px;
+	margin-top:300px;
+	width:100px;
+	height: 100px;
+	background-color: black;
+/*	
+以下方式都会触发容器的bfc，能够改变在其内部语法行为，能够解决margin塌陷
+    display:inline-block;
+	position: absolute;
+	overflow: hidden;
+	float: left/right;
+*/
+
+}
+
+.content1 {
+	margin-left:50px;
+	/*子元素垂直方向没起作用，margin塌陷*/
+	margin-top:150px; 
+	width:50px;
+	height: 50px;
+	background-color: pink;
+}
+
+/*bfc可以解决margin合并===============================*/
+/*除了改css外还要在原来的html上加上父标签，改变了结构，所以不解决*/
+.parent {
+/*	
+以下方式都会触发容器的bfc，能够改变在其内部语法行为，能够解决margin合并
+    display:inline-block;
+	position: absolute;
+	overflow: hidden;
+	float: left/right;
+*/
+}
+
+.box1 {
+	background-color: red;
+	margin-bottom: 100px;
+}
+
+.box2 {
+	background-color: green;
+	/*兄弟元素垂直方向没起作用，margin合并*/
+	margin-top: 100px;
+}
+
+
+/*1.浮动类元素产生浮动流，
+所有产生了浮动流的元素，块级元素看不到他们，
+产生了bfc的元素(包括浮动类元素）和文本类属性（inline）的元素以及文本能看到他们
+========================================================
+*/
+
+/*.box {
+	float:left;
+	width: 100px;
+	height: 100px;
+	background-color: black;
+	opacity: 0.5;
+}
+
+.demo {
+	width: 50px;
+	height: 50px;
+	background-color: pink;
+}*/
+
+.ppp {
+	border:1px solid green;
+}
+
+.content {
+	float:left;
+	color: #fff;
+	background-color: black;
+	width: 100px;
+	height: 100px;
+}
+
+p {
+	border-top: 0 solid green;
+	/*不加p，父级块级元素div看不到子元素浮动类，所以包不住子元素，通过加一个p元素，同时加上clear清除周边浮动流，
+	此时p元素认为其前一个float流是没有的，就会按正常换行，p就能够撑开父级容器，达到父级容器包裹子元素效果*/
+	clear: both;
+}
