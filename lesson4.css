@@ -1,0 +1,120 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+/*文本换行=====================*/
+p.singleline {
+	width: 300px;
+	height: 20px;
+	line-height: 20px;
+	border: 1px solid black;
+
+    /*默认超长文本会换行，让其不换行*/
+	white-space: nowrap;
+	overflow: hidden;
+	/*显示省略号表示被修剪的文本*/
+	text-overflow: ellipsis;
+}
+
+p.multiline {
+	width: 300px;
+	height: 40px;
+	line-height: 20px;
+	border: 1px solid black;
+
+	overflow: hidden;
+}
+
+/*图片背景=========================*/
+div.bgimg	{
+	width: 200px;
+	height: 200px;
+	border: 1px solid black;
+	background-image: url(pic/1.jpg);
+	background-size:100px 100px;
+	background-repeat: repeat;
+}
+
+/*模仿百度链接，同时在网速非常不好时，即没有css和js，此时也能展示“百度网”三个字，让网站能够正常使用
+   可以通过注释掉以下CSS查看效果=================================*/
+/*方法一*/
+a.method1 {
+	/*让其可以改变大小*/
+	display: inline-block;
+	/*去掉下划线*/
+	text-decoration: none;
+	color: #424242;
+	width: 270px;
+	height: 129px;
+	border: 1px solid black;
+	background-image: url(https://www.baidu.com/img/PCtm_d9c8750bed0b3c7d089fa7d55720d6cf.png);
+	background-size: 270px 129px;
+
+    /*让文本缩进到框外，并在一行展示，同时隐藏超出部分*/
+	text-indent: 270px;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+/*方法二*/
+a.method2 {
+	/*让其可以改变大小*/
+	display: inline-block;
+	/*去掉下划线*/
+	/*text-decoration: none;*/
+	color: #424242;
+	width: 270px;
+	border: 1px solid black;
+	background-image: url(https://www.baidu.com/img/PCtm_d9c8750bed0b3c7d089fa7d55720d6cf.png);
+	background-size: 270px 129px;
+
+/*    让内容区高度为0，则内容会被挤到border外，同时将padding-top设置足够大，则背景图片可以充斥在padding中，
+      将整个a标签撑开，最后隐藏超出部分*/
+    height: 0px;
+    padding-top: 129px;
+    overflow: hidden;
+}
+
+
+/*1.行级元素只能套行级元素
+2.块级元素可以套任何元素
+3.特殊：
+1）p不能套块级元素
+2）a不能套a*/
+
+
+/*margin设置成动态调整，让内容居中宽度不变*/
+.wrapper {
+	height: 30px;
+	background-color: #123;
+}
+
+.content {
+	/*将margin设置成正好自动居中对齐*/
+	margin: 0 auto;
+	width:1200px;
+	height: 30px;
+	background-color: #0f0;
+}
+
+
+/*inline、inline-block都是文本类元素，和文本一样，中间如果有分隔符（空格换行等），不管有几个都会转成一个间隔
+想去掉间隔，直接编辑的时候中间不留缝隙即可
+*/
+img {
+	width: 100px;
+	height: 100px;
+}
+
+
+
+
+/*正常span后面的文本应当和整个span底部对齐，因为span变成了inline-block，具有文本属性，但是一旦span里面有文本了，
+则span后面的文本和里面的文本底对齐*/
+span {
+	display: inline-block;
+	width: 100px;
+	height: 100px;
+	background-color: red;
+}
