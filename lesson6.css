@@ -28,7 +28,8 @@
 	height: 100px;
 	background-color: black;
 /*	
-以下方式都会触发容器的bfc，能够改变在其内部语法行为，能够解决margin塌陷
+以下方式都会触发容器的bfc（Block formatting context)，
+能够改变在其内部语法行为，能够解决margin塌陷
     display:inline-block; 
 	position: absolute;   同时会将display转成inline-block
 	overflow: hidden;
